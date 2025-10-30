@@ -1,5 +1,3 @@
-use colored::*;
-
 /// Wrapper for colored output that can be easily disabled.
 pub struct ColorConfig {
     enabled: bool,
