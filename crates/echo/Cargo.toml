@@ -1,0 +1,28 @@
+[package]
+name = "echo"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "echo"
+path = "src/main.rs"
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true
+common.workspace = true
+
+[features]
+default = []
+completions = ["dep:clap_complete"]
+
+[dependencies.clap_complete]
+workspace = true
+optional = true
+
+[dev-dependencies]
+assert_cmd.workspace = true
+predicates.workspace = true
+

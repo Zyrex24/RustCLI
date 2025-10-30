@@ -1,0 +1,46 @@
+[workspace]
+members = [
+    "crates/common",
+    "crates/echo",
+    "crates/cat",
+    "crates/ls",
+    "crates/pwd",
+    "crates/mkdir",
+    "crates/rmdir",
+    "crates/touch",
+    "crates/mv",
+    "crates/rm",
+    "crates/cli-shell",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["RustCLI Contributors"]
+license = "Apache-2.0"
+repository = "https://github.com/Zyrex24/rustcli"
+
+[workspace.dependencies]
+# CLI parsing
+clap = { version = "4.5", features = ["derive"] }
+clap_complete = "4.5"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Terminal colors
+colored = "2.1"
+
+# File system utilities
+walkdir = "2.5"
+
+# Common library
+common = { path = "crates/common" }
+
+# Testing dependencies
+assert_cmd = "2.0"
+predicates = "3.1"
+tempfile = "3.10"
+

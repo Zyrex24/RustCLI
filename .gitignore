@@ -1,0 +1,39 @@
+# Rust build artifacts
+/target
+**/target
+
+# Cargo.lock for libraries (keep for binaries)
+# Uncomment if this is a library:
+# Cargo.lock
+
+# Debug and release builds
+debug/
+release/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Cargo build files
+**/*.rs.bk
+*.pdb
+
+# Testing artifacts
+*.profraw
+*.profdata
+
+# Documentation build
+/doc
+
+# Backup files
+*.bak
+*.backup
+
+# AI-generated documentation (not part of genuine project)
+IMPLEMENTATION_COMPLETE.md
+PROJECT_SUMMARY.md
+JAVA_COMPARISON.md

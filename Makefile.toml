@@ -1,0 +1,119 @@
+# Cargo-make build automation
+# Install with: cargo install cargo-make
+# Run with: cargo make <task>
+
+[tasks.fmt]
+description = "Format all code"
+command = "cargo"
+args = ["fmt", "--all"]
+
+[tasks.fmt-check]
+description = "Check code formatting"
+command = "cargo"
+args = ["fmt", "--all", "--", "--check"]
+
+[tasks.clippy]
+description = "Run clippy lints"
+command = "cargo"
+args = ["clippy", "--all-targets", "--all-features", "--", "-D", "warnings"]
+
+[tasks.test]
+description = "Run all tests"
+command = "cargo"
+args = ["test", "--all-features"]
+
+[tasks.test-echo]
+description = "Test echo utility"
+command = "cargo"
+args = ["test", "-p", "echo"]
+
+[tasks.test-cat]
+description = "Test cat utility"
+command = "cargo"
+args = ["test", "-p", "cat"]
+
+[tasks.test-ls]
+description = "Test ls utility"
+command = "cargo"
+args = ["test", "-p", "ls"]
+
+[tasks.build]
+description = "Build all utilities in debug mode"
+command = "cargo"
+args = ["build"]
+
+[tasks.build-release]
+description = "Build all utilities in release mode"
+command = "cargo"
+args = ["build", "--release", "--all-features"]
+
+[tasks.clean]
+description = "Clean build artifacts"
+command = "cargo"
+args = ["clean"]
+
+[tasks.check]
+description = "Check all code without building"
+command = "cargo"
+args = ["check", "--all-targets", "--all-features"]
+
+[tasks.doc]
+description = "Generate documentation"
+command = "cargo"
+args = ["doc", "--all-features", "--no-deps", "--open"]
+
+[tasks.install-echo]
+description = "Install echo utility"
+command = "cargo"
+args = ["install", "--path", "crates/echo"]
+
+[tasks.install-cat]
+description = "Install cat utility"
+command = "cargo"
+args = ["install", "--path", "crates/cat"]
+
+[tasks.install-ls]
+description = "Install ls utility"
+command = "cargo"
+args = ["install", "--path", "crates/ls"]
+
+[tasks.install-all]
+description = "Install all utilities"
+dependencies = ["install-echo", "install-cat", "install-ls"]
+
+[tasks.ci]
+description = "Run CI checks (fmt, clippy, test)"
+dependencies = ["fmt-check", "clippy", "test"]
+
+[tasks.pre-commit]
+description = "Run pre-commit checks"
+dependencies = ["fmt", "clippy", "test"]
+
+[tasks.coverage]
+description = "Generate test coverage report (requires cargo-tarpaulin)"
+command = "cargo"
+args = ["tarpaulin", "--all-features", "--workspace", "--out", "Html"]
+
+[tasks.bench]
+description = "Run benchmarks (when implemented)"
+command = "cargo"
+args = ["bench"]
+
+[tasks.audit]
+description = "Check for security vulnerabilities (requires cargo-audit)"
+command = "cargo"
+args = ["audit"]
+
+[tasks.outdated]
+description = "Check for outdated dependencies (requires cargo-outdated)"
+command = "cargo"
+args = ["outdated"]
+
+[tasks.bloat]
+description = "Analyze binary size (requires cargo-bloat)"
+command = "cargo"
+args = ["bloat", "--release"]
+
+[tasks.default]
+alias = "build"
+

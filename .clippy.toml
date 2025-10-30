@@ -1,0 +1,23 @@
+# Clippy configuration for Rust CLI Utilities
+
+# Warn on these clippy lints
+# (most are enabled by default, listed here for documentation)
+
+# Cognitive complexity threshold
+cognitive-complexity-threshold = 25
+
+# Maximum allowed nesting
+max-nesting-level = 4
+
+# Function lines threshold
+too-many-lines-threshold = 100
+
+# Maximum function parameters
+too-many-arguments-threshold = 7
+
+# Type complexity threshold
+type-complexity-threshold = 200
+
+# Minimum similarity between types before triggering the suspicious_else_formatting lint
+suspicious-else-formatting-threshold = 5
+

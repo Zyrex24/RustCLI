@@ -1,0 +1,54 @@
+# Rustfmt configuration for Rust CLI Utilities
+
+# Edition to use for formatting
+edition = "2021"
+
+# Maximum width of each line
+max_width = 100
+
+# Use hard tabs instead of spaces
+hard_tabs = false
+
+# Number of spaces per tab
+tab_spaces = 4
+
+# Use verbose format for arrays
+array_width = 60
+
+# Use verbose format for chains
+chain_width = 60
+
+# Use verbose format for functions
+fn_call_width = 60
+
+# Reorder imports alphabetically
+reorder_imports = true
+
+# Reorder modules alphabetically
+reorder_modules = true
+
+# Group imports by module
+imports_granularity = "Crate"
+
+# Format string literals
+format_strings = true
+
+# Newline style
+newline_style = "Auto"
+
+# Comments
+comment_width = 80
+wrap_comments = true
+
+# Preserve line breaks in doc comments
+normalize_doc_attributes = true
+
+# Format code in doc comments
+format_code_in_doc_comments = true
+
+# Use field initialization shorthand
+use_field_init_shorthand = true
+
+# Prefer .await over .await?
+prefer_await = true
+
